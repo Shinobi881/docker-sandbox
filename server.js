@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
+app.use('/', express.static('dist'));
+
+app.get('/greetings', (req, res) => {
   res.send('Is this thing on?');
 });
 
